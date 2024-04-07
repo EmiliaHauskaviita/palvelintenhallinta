@@ -91,7 +91,8 @@ Seuraavassa alla olevassa kuvassa halusin nähdä orjan /etc kansion sisällön.
 
 d) Aja useita idempotentteja (state.single) komentoja master-slave yhteyden yli.
 
-<img width="464" alt="Näyttökuva 2024-4-7 kello 19 14 31" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/05c20a6b-9429-4961-a71a-3f06c36f5b0f">
+<img width="464" alt="Näyttökuva 2024-4-7 kello 19 14 31" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/3d558def-9337-4798-b2d7-93de701fd835">
+
 
 Yllä olevassa kuvassa käyttäjä emilia luotiin sillä komennossa määritin että käyttäjä emilia tulee olal olemassa.
 Alla olevassa kuvassa näkyy, että kansio moi luotiin sillä sen nimistä kansiota ei vielä ollut. Olen myös lisännyt kuvan jossa näkyy että olen kokeillut että kansio moi 
