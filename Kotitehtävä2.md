@@ -98,8 +98,8 @@ Yllä olevassa kuvassa käyttäjä emilia luotiin sillä komennossa määritin e
 Alla olevassa kuvassa näkyy, että kansio moi luotiin sillä sen nimistä kansiota ei vielä ollut. Olen myös lisännyt kuvan jossa näkyy että olen kokeillut että kansio moi 
 löytyy t002 koneella.
 
-<img width="465" alt="Näyttökuva 2024-4-7 kello 19 17 29" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/8eee960a-c615-4907-9038-
-63eca7551ec5">
+<img width="465" alt="Näyttökuva 2024-4-7 kello 19 17 29" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/0dc25f1f-85bd-443d-891b-4b8401f6e240">
+
 
 <img width="499" alt="Näyttökuva 2024-4-7 kello 19 20 24" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/bae121a9-9ed1-401a-ac95-8157528bee39">
 
