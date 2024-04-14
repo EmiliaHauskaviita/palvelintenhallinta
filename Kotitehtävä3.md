@@ -105,8 +105,11 @@ Kuvassa joka on alla näkyy git clone komento jossa olen cloonannut yhteinen rep
 
 ## Lähteet
 Chacon & Straub 2014: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
+
 Karvinen, T. Suolax, GitHub 2024: https://github.com/terokarvinen/suolax/commits/main/
+
 Karvinen, T. h3 Toimiva versio 2024: https://terokarvinen.com/2024/configuration-management-2024-spring/#h3-toimiva-versio
+
 Byrtek, A. 2011. Stockoverflow: https://stackoverflow.com/questions/6143285/git-add-vs-push-vs-commit 
 
 
