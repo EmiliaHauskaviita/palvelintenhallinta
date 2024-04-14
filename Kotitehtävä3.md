@@ -2,7 +2,7 @@
 
 ## x) Lue ja tiivistä. (Tässä x-alakohdassa ei tarvitse tehdä testejä tietokoneella, vain lukeminen tai kuunteleminen ja tiivistelmä riittää. Tiivistämiseen riittää muutama ranskalainen viiva. Kannattaa lisätä mukaan myös jokin oma havainto, idea tai kysymys.)
 
-Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git?
+### Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git?
 - Aina kun annetaan komento git commit tai tallennetaan tiloja git ottaa kuvan miltä kaikki tiedostot näyttävät juuri sillä hetkellä ja tallentaa viittauksen kuvaan.
 - Tiedostoja ei pysty muokkaamaan tai hakemistoa vaihtamaan ilman että git huomaisi sen.
 - Gitissä toimintojen tekeminen lisää dataa git-tietokantaan.
@@ -10,15 +10,14 @@ Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git?
 - Modified tarkoittaa että olet muokannut tiedostoa mutta et ole vielä sitonut (commit) sitä tietokantaan.
 - Staged tarkoittaa että muokattu tiedosto on merkitty tämän hetkiseen versioon jotta voi siirtyä seuraavaan commit tilannekuvaan.
 - Commited tarkoittaa että data on tallennettu turvallisesti tietokantaan.
-Gitin käyttö on lähinnä 'git add . && git commit; git pull && git push'. Selitä tuon komennon jokainen osa. Käytä apuna itse valitsemiasi lähteitä ja viittaa niihin.
+### Gitin käyttö on lähinnä 'git add . && git commit; git pull && git push'. Selitä tuon komennon jokainen osa. Käytä apuna itse valitsemiasi lähteitä ja viittaa niihin.
 -'git add . && git commit; git pull && git push' komento tehdään aina ensimmäisenä ja aina päätteeksi.
 - Katsoin apua stackoverflow sivulta johon Byrtek Adam oli kommentoinut eri komennon eri osia. 
 - git add . lisää tiedostot git indexiin, jolla tarkoitetaan aluetta jossa tiedostot odottaa että ne commitetaan.
 - git commit tarkoituksena on sitoa hakemiston tiedostot varastoon.
 - git pull tarkoittaa että se tuo kaikki muuutokset, joita on tehty sillä aikaa kun olit pois esim. jos joku muu on tehnyt muutoksia yöllä kun olet nukkut.
 - git push tarkoittaa, että kun ollaan tehty muutoksia niin tallennetaan/tuodaan ne. Tällöin muut näkevät tekemäsi muutokset.
-Varaston terokarvinen/suolax/ historia, eli loki ja muutokset. Kätevimmin komentokehotteesta 'git clone https://github.com/terokarvinen/suolax.git; cd suolax/; git log --patch --color|less -R'.
-Wepistäkin saattaa onnistua kliksuttelemalla "Commits".
+### Varaston terokarvinen/suolax/ historia, eli loki ja muutokset. Kätevimmin komentokehotteesta 'git clone https://github.com/terokarvinen/suolax.git; cd suolax/; git log --patch --color|less -R'. Wepistäkin saattaa onnistua kliksuttelemalla "Commits".
 - 10.4 klo. 20:55 muokattu käyttöohjeita
 - 10.4 klo. 20:04 on putsattu tiedosto README.md
 - 10.4 klo. 20:02 on lisätty suosikki ohjelmia ja ladattu lista top file
@@ -96,8 +95,11 @@ jälkeen pystyin muokkaamaan kloonaamiani varastoja gitillä.
 Kokeilimme tätä tunnilla Leevin kanssa niin että loin uuden repon ja annoin Leeville oikeudet tähän ja pääsimme molemmat tekemään muutoksia varastoon. Loimme tiedostoja
 gitillä ja myös suoraan verkossa ja saimme kaiken toimimaan. Myös tiedostojen muokkaaminen niin gitissä että verkossa onnistui ja muutokset tulivat näkyviin. Alla olevassa 
 kuvassa olen avannut tiedoston verkossa ja leevi on käynyt muokaamassa sitä gitillä.
+
 <img width="820" alt="Näyttökuva 2024-4-9 kello 10 35 23" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/778992e9-5567-4e27-8323-a3f59a622dcd">
+
 Kuvassa joka on alla näkyy git clone komento jossa olen cloonannut yhteinen repon.
+
 <img width="953" alt="Näyttökuva 2024-4-9 kello 10 41 10" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/198a6af5-9903-4cf9-bc14-8954229d206a">
 
 
