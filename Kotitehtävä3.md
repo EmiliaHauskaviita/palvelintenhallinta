@@ -80,6 +80,11 @@ Loin '/srv/salt' kansioon 'mkdir hello' hakemiston jonka sisään tein init.sls 
 <img width="364" alt="Näyttökuva 2024-4-23 kello 8 31 22" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/e8a2b57b-8068-4e85-a956-30bc447f207d">
 <img width="727" alt="Näyttökuva 2024-4-23 kello 8 32 16" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/d1bfff60-ad05-4662-b858-e3d812179276">
 
+23.4.2024 päivitys:
+tee srv/salt/hello kansio kotihakemiston alle. Nyt sain komennon 'sudo salt-call --local --file-root srv/salt/ state.apply' toimimaan. Olin aikaisemmin tehnyt hello kansion väärään hakemmistoon sillä olin tehnyt sen root hakemiston alle.
+<img width="876" alt="Näyttökuva 2024-4-23 kello 10 53 26" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/1e7fbdb1-d1e5-45a8-b0b0-f08b1601bf1c">
+
+
 
 ## f) Vapaaehtoinen: Se toinen järjestelmä: kokeile Gittiä eri käyttöjärjestelmällä kuin sillä, millä teit muut harjoitukset. 
 Selitä niin, että kyseistä järjestelmää osaamatonkin onnistuu. Mahdollisuuksia on runsaasti: Debian, Fedora, Windows, OSX...
