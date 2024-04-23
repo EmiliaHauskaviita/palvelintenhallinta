@@ -134,6 +134,10 @@ Kokeilin seuraavaksi ajaa vielä tilan minion eli t002 koneelleni. Alla olevista
 <img width="913" alt="Näyttökuva 2024-4-21 kello 13 37 21" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/a4d5274d-bea9-41b0-93e7-c6a98f22b575">
 <img width="632" alt="Näyttökuva 2024-4-21 kello 13 37 50" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/0e8b191f-ec41-4ac7-b573-bf5a9a15eee5">
 
+Kaiken lopuksi tarkistin komennolla ip a oman ip osoitteeni ja kokeilin toimivuutta verkossa. 
+
+<img width="917" alt="Näyttökuva 2024-4-23 kello 12 59 06" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/dd0ec8c2-3fc3-4c2d-afee-4164df89761b">
+
 
 ## d) SSHouto. Lisää uusi portti, jossa SSHd kuuntelee.
 (Jos käytät Vagrantia, muista jättää portti 22/tcp auki - se on oma yhteytesi koneeseen. SSHd:n asetustiedostoon voi tehdä yksinkertaisesti kaksi "Port" riviä, molemmat portit avataan.
