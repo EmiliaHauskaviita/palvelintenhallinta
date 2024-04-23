@@ -74,6 +74,11 @@ Esimerkiksi 'sudo salt-call --local --file-root srv/salt/ state.apply', huomaa s
 
 En osannut tehdä tehtävää kun yritin tehdä sitä sain alla olevan kuvan virheen. 
 <img width="709" alt="Näyttökuva 2024-4-14 kello 17 21 44" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/7cf885cc-260f-426d-91f7-b52d2da2e478">
+23.4.2024 päivitys:
+Loin '/srv/salt' kansioon 'mkdir hello' hakemiston jonka sisään tein init.sls tiedoston johon laitoin /tmp/helloemilia: ja uudelle riville kahdella välillä file.managed. Hello tilan ajo onnistui oikein mutta komento 'sudo salt-call --local --file-root srv/salt/ state.apply' en saanut toimimaan.
+
+<img width="364" alt="Näyttökuva 2024-4-23 kello 8 31 22" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/e8a2b57b-8068-4e85-a956-30bc447f207d">
+<img width="727" alt="Näyttökuva 2024-4-23 kello 8 32 16" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/d1bfff60-ad05-4662-b858-e3d812179276">
 
 
 ## f) Vapaaehtoinen: Se toinen järjestelmä: kokeile Gittiä eri käyttöjärjestelmällä kuin sillä, millä teit muut harjoitukset. 
