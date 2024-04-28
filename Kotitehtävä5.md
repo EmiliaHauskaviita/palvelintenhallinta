@@ -8,7 +8,7 @@ itsekin ymmärsin mitä niissä tehdään ja miksi.
 ## a) Asenna Salt Windowsille tai Macille. Osoita 'salt-call --local' komentoa ajamalla, että asennus on onnistunut. (Jos olet asentanut jo aiemmin, tässä riittää pelkkä asennuksen testaaminen, eikä asennusta tarvitse tehdä uudelleen.)
 
 Olen ladannut Salt jo aikaisemmin Macille. Saltin lataamiseen minun täytyi Macille ensin ladata Salt lataustiedosto macOS käyttöjärjestelmälle. Löysin ohjeet
-Salt lataamiseen Saltproject sivulta linkki tähän löytyy lähteistä. Kokeilin komennolla sudo salt-call --local, että asennus on onnistunut. Tulos näkyy
+Salt lataamiseen Saltproject sivulta linkki tähän löytyy lähteistä. Kokeilin komennolla sudo salt-call --local -version, että asennus on onnistunut. Tulos näkyy
 Alta löytyvästä kuvasta.
   
 <img width="618" alt="Näyttökuva 2024-4-26 kello 11 04 32" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/5cb27c91-ba18-4413-bd0d-c882d9ba0cd0">
