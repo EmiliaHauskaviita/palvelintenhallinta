@@ -3,9 +3,13 @@
 Windows Package Manager: Introduction, Install libraries, Populate the local Git repository, Update minion database, Install software package, Usage osa. Eli sivun alusta kappaleen "Remove a package" loppuun, poislukien "Configuration". (Kannatta soveltaa asennuksesta idempotentti versio, ulkomuistista: 'sudo salt-call --local -l info state.apply pkg.installed curl').
 
 -Salt tarjoaa Windowsille oman paketinhallinta työkalun. 
+
 -Ohjelman määritelmätiedosto on .sls loppuinen.
+
 -Jos käytetään Salt Windows -paketinhallintaa Salt Git -varastossa isännöityjen paketinmääritystiedostojen kanssa, asennetaan kirjastot GitPython tai pygit2.
+
 -Luodakseen tietokantamerkinnät paketin määritystiedostolle ja rakentaakseen pakettitietokanta pkg.refresh_dp tulee ajaa minioneilla.
+
 -Pakettien lataus Windowsissa tapahtuu komennolla salt-call --local pkg.install (haluttu ohjelma).
 
 
