@@ -6,7 +6,7 @@ Windows Package Manager: Introduction, Install libraries, Populate the local Git
 -Ohjelman määritelmätiedosto on .sls loppuinen.
 -Jos käytetään Salt Windows -paketinhallintaa Salt Git -varastossa isännöityjen paketinmääritystiedostojen kanssa, asennetaan kirjastot GitPython tai pygit2.
 -Luodakseen tietokantamerkinnät paketin määritystiedostolle ja rakentaakseen pakettitietokanta pkg.refresh_dp tulee ajaa minioneilla.
--Pakettien lataus tapahtuu komennolla salt-call --local pkg.install (haluttu ohjelma).
+-Pakettien lataus Windowsissa tapahtuu komennolla salt-call --local pkg.install (haluttu ohjelma).
 
 
 ## a) Paketti Windowsia. Asenna Windowsiin tai Macciin ohjelmia Saltin pkg.installed -funktiolla. (Jos teit tarvittavat asennukset jo tunnilla, voit kirjoittaa ympäristön asennuksen ulkomuistista, ja asentaa nyt vain jonkin uuden paketin. Muistinvaraisesti kirjoitetut muistiinpanot ovat paljon epämääräisempiä kuin työn aikana kirjoitetut, joten merkitse selvästi, mitkä osat on kirjoitettu ulkomuistista ja mitkä työskennellessä.)
@@ -45,28 +45,28 @@ Viimeiseksi tein top.sls tiedoston '/tmp/salt' kansioon. Top.sls tiedostoon lis�
   Kiinnostava tekniikka, esim. jokin tapa käyttää Saltia
   Avoimet kysymykset ja muut huomiot
   
-1. https://sampohautala.wordpress.com/2018/12/09/ph-h7-oma-moduli/x
+1. https://sampohautala.wordpress.com/2018/12/09/ph-h7-oma-moduli/
    Tarkoitus: Kehitysympäristön luominen linuxille, ja kuvanmuokkaus ja 3D-mallinnus graaffiselle suunnittelijalle Windowsiin.
    Lisenssi: En löytänyt.
    Tekijä ja vuosi: Sampo Hautala, 2018
    Riippuvuudet: Virtuaalikone, Herra-orja arkkitehtuuri, linux ja windows orjat.
    Kiinnostava: Työstä kiinnostavan teki se että tässä ladattiin hyvin erilaisia paketteja ja niitä ladattiin linuxille ja Windowsille.
    
-2. https://jannelinux.design.blog/2020/05/19/oma-moduuli-h7/x
+2. https://jannelinux.design.blog/2020/05/19/oma-moduuli-h7/
    Tarkoitus: Luoda tila, jolla pystytään asentamaan halutut paketit jo valmiina confattuina uudelle koneelle.
    Lisenssi: En löytänyt
    Tekijä ja vuosi: Janne Mustonen, 2020
    Riippuvuudet: linux ja virtualbox
    Kiinnostava: Työ oli erittäin hyödyllinen ja varmasti tulee auttamaan myös tulevaisuudessa. Osaan paketeista tarvitsi ladata myös                     repository ja niiden tekeminen oli mielestäni kiinnostavaa.
    
-3. https://markuspyharanta.com/2016/12/10/palvelinten-hallinta-oma-moduuli/x
+3. https://markuspyharanta.com/2016/12/10/palvelinten-hallinta-oma-moduuli/
    Tarkoitus: Automatisoida Puppetin avulla Lamp-stack ja gedit asennus uusille koneille. 
    Lisenssi: En löytänyt.
    Tekijä ja vuosi: Markus Pyhäranta, 2016
    Riippuvuudet: Linux, virtuaalikone ja Puppet
    Kiinnostava: Erityisesti itseäni kiinnosti työssä se että se oli tehty käyttäen Puppettia eikä Saltia.
 
-4. https://katrilaulajainen.wordpress.com/2018/05/10/palvelinten-hallinta-h6-8-5-2018-oma-miniprojekti-saltilla/x
+4. https://katrilaulajainen.wordpress.com/2018/05/10/palvelinten-hallinta-h6-8-5-2018-oma-miniprojekti-saltilla/
    Tarkoitus: Automatisoida Saltin avulla pakettien lataus valmiiksi confattuina uusille koneille.
    Lisenssi: En löytänyt.
    Tekijä ja vuosi: Katri Laulajainen, 2018
@@ -84,8 +84,9 @@ Kommentoi ja arvioi modulia.
 Modulin kaikkia bugeja ei tarvitse korjata, tarkoitus on ajaa modulia ja arvioida sitä.
 Jos jokin moduli vaikuttaa täysin toimimattomalta, kirjaa ylös yrityksesi ja kokeile toista modulia.
 
-Valitsin tehtävään moduliksi Katri Laulajaisen modulin, jossa tarkoituksena oli ladata kolme pakettia, firefox, gimp ja sshopen-server. Aloitin tehtävän tekemisen noudattamalla 
-Laulajaisen ohjeita, mutta ensimmäinen ongelma tuli kun ajoin salt firefox-tilan. Jostain syytä sain alla näkyvässä kuvassa olevan virheilmoituksen. 
+Valitsin tehtävään moduliksi Katri Laulajaisen modulin, jossa tarkoituksena oli ladata kolme pakettia, firefox, gimp ja sshopen-server. 
+Valitsin kyseisen työn, sillä kiinnostuin firefoxin asentamisesta. Aloitin tehtävän tekemisen noudattamalla 
+Laulajaisen ohjeita, mutta ensimmäinen ongelma tuli kun ajoin salt firefox-tilan, jonka sisään tein init.sls tiedoston jossa oli eri paketteja, joita ladattaisiin. Jostain syytä sain alla näkyvässä kuvassa olevan virheilmoituksen. 
 <img width="653" alt="Näyttökuva 2024-5-3 kello 19 36 50" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/be227587-c10c-4715-aa3d-caf614ab706b">
 
 Päätin kokeilla toimiiko kuitenkin kahden muun paketin lataukset, jos poistan init.sls tiedostosta kohdan firefox. Ajoin scriptin high.sh jonka olin tehnyt sitä varten että voisin ajaa salt-komentoja sillä.
@@ -115,3 +116,13 @@ Moduli oli mielestäni hyvin toteutettu ja ohjeet olivat selkeät noudattaa. Vai
 ## Lähteet
 
 Karvinen, T. h6 Benchmark, 2024: https://terokarvinen.com/2024/configuration-management-2024-spring/#h6-benchmark
+
+Hautala, S. h7 oma moduli, 2018: https://sampohautala.wordpress.com/2018/12/09/ph-h7-oma-moduli/
+
+Mustonen, J. oma moduli h7, 2020: https://jannelinux.design.blog/2020/05/19/oma-moduuli-h7/
+
+Pyhäranta, M. Palvelinten hallinta - Oma moduuli, 2016: https://markuspyharanta.com/2016/12/10/palvelinten-hallinta-oma-moduuli/
+
+Laulajainen, K. Oma miniprojekti Saltilla, 2018: https://katrilaulajainen.wordpress.com/2018/05/10/palvelinten-hallinta-h6-8-5-2018-oma-miniprojekti-saltilla/
+
+Salt project, 2024: https://docs.saltproject.io/en/latest/topics/windows/windows-package-manager.html
