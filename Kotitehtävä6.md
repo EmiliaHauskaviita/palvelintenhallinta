@@ -15,6 +15,7 @@ state.single pkg.installed tree'. Komento latasi minulle onnistuneesti tree ohje
 '/tmp/salt' loin uuden kansion nimeltä hello jonka sisään tein init.sls tiedoston. Init.sls tiedostoon tein alla olevan kuvan mukaisen sisällön. 
 
 Seuraavaksi kokeilin ajaa Hello tilan komennolla 'sudo salt-call --local --file-root /tmp/salt state.apply hello'. Tila ajettiin onnistuneesti ja siitä on kuva alhaalla.
+
 <img width="712" alt="Näyttökuva 2024-4-30 kello 13 08 00" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/2c4a86ef-d7c5-4ca0-9f3f-876feb9ea477">
 
 
@@ -46,31 +47,52 @@ Viimeiseksi tein top.sls tiedoston '/tmp/salt' kansioon. Top.sls tiedostoon lis�
   Avoimet kysymykset ja muut huomiot
   
 1. https://sampohautala.wordpress.com/2018/12/09/ph-h7-oma-moduli/
+   
    Tarkoitus: Kehitysympäristön luominen linuxille, ja kuvanmuokkaus ja 3D-mallinnus graaffiselle suunnittelijalle Windowsiin.
-   Lisenssi: En löytänyt.
+
+    Lisenssi: En löytänyt.
+
    Tekijä ja vuosi: Sampo Hautala, 2018
+
    Riippuvuudet: Virtuaalikone, Herra-orja arkkitehtuuri, linux ja windows orjat.
-   Kiinnostava: Työstä kiinnostavan teki se että tässä ladattiin hyvin erilaisia paketteja ja niitä ladattiin linuxille ja Windowsille.
+
+    Kiinnostava: Työstä kiinnostavan teki se että tässä ladattiin hyvin erilaisia paketteja ja niitä ladattiin linuxille ja Windowsille.
+
    
 2. https://jannelinux.design.blog/2020/05/19/oma-moduuli-h7/
+
    Tarkoitus: Luoda tila, jolla pystytään asentamaan halutut paketit jo valmiina confattuina uudelle koneelle.
+
    Lisenssi: En löytänyt
+
    Tekijä ja vuosi: Janne Mustonen, 2020
+
    Riippuvuudet: linux ja virtualbox
+
    Kiinnostava: Työ oli erittäin hyödyllinen ja varmasti tulee auttamaan myös tulevaisuudessa. Osaan paketeista tarvitsi ladata myös                     repository ja niiden tekeminen oli mielestäni kiinnostavaa.
    
 3. https://markuspyharanta.com/2016/12/10/palvelinten-hallinta-oma-moduuli/
-   Tarkoitus: Automatisoida Puppetin avulla Lamp-stack ja gedit asennus uusille koneille. 
-   Lisenssi: En löytänyt.
-   Tekijä ja vuosi: Markus Pyhäranta, 2016
-   Riippuvuudet: Linux, virtuaalikone ja Puppet
-   Kiinnostava: Erityisesti itseäni kiinnosti työssä se että se oli tehty käyttäen Puppettia eikä Saltia.
 
-4. https://katrilaulajainen.wordpress.com/2018/05/10/palvelinten-hallinta-h6-8-5-2018-oma-miniprojekti-saltilla/
-   Tarkoitus: Automatisoida Saltin avulla pakettien lataus valmiiksi confattuina uusille koneille.
+   Tarkoitus: Automatisoida Puppetin avulla Lamp-stack ja gedit asennus uusille koneille. 
+
    Lisenssi: En löytänyt.
+
+   Tekijä ja vuosi: Markus Pyhäranta, 2016
+
+   Riippuvuudet: Linux, virtuaalikone ja Puppet
+
+   Kiinnostava: Erityisesti itseäni kiinnosti työssä se että se oli tehty käyttäen Puppettia eikä Saltia.
+   
+5. https://katrilaulajainen.wordpress.com/2018/05/10/palvelinten-hallinta-h6-8-5-2018-oma-miniprojekti-saltilla/
+
+   Tarkoitus: Automatisoida Saltin avulla pakettien lataus valmiiksi confattuina uusille koneille.
+
+   Lisenssi: En löytänyt.
+
    Tekijä ja vuosi: Katri Laulajainen, 2018
+
    Riippuvuudet: Linux, virtuaalikone, (git)
+
    Kiinnostava: Työssä erityisesti itseäni kiinnosti firefox oletuskotisivun vaihtaminen.
 
 ## c) Testbench. Aja toisen tekemä tila.
@@ -87,18 +109,22 @@ Jos jokin moduli vaikuttaa täysin toimimattomalta, kirjaa ylös yrityksesi ja k
 Valitsin tehtävään moduliksi Katri Laulajaisen modulin, jossa tarkoituksena oli ladata kolme pakettia, firefox, gimp ja sshopen-server. 
 Valitsin kyseisen työn, sillä kiinnostuin firefoxin asentamisesta. Aloitin tehtävän tekemisen noudattamalla 
 Laulajaisen ohjeita, mutta ensimmäinen ongelma tuli kun ajoin salt firefox-tilan, jonka sisään tein init.sls tiedoston jossa oli eri paketteja, joita ladattaisiin. Jostain syytä sain alla näkyvässä kuvassa olevan virheilmoituksen. 
+
 <img width="653" alt="Näyttökuva 2024-5-3 kello 19 36 50" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/be227587-c10c-4715-aa3d-caf614ab706b">
 
 Päätin kokeilla toimiiko kuitenkin kahden muun paketin lataukset, jos poistan init.sls tiedostosta kohdan firefox. Ajoin scriptin high.sh jonka olin tehnyt sitä varten että voisin ajaa salt-komentoja sillä.
 Kokeilin uudelleen tilan toimivuutta ja tällä kertaa sain onnistuneen vastausken. 
+
 <img width="513" alt="Näyttökuva 2024-5-3 kello 19 56 45" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/9d754d7d-d5f6-4d5c-8d6c-f25ec7de0dd5">
 
 Jatkoin ohjeiden seuraamista jättämällä firefox kohdan pois. Tarkoituksena olisi kuitenkin ollut firefox oletuskotisivun vaihtaminen. Tämän jälkeen keskityttiinkin ssh-serveriin. 
 Tarkoituksena oli vaihtaa oletusportti 22 numeroon 8888. Kopioin sshd_config tiedoston /srv/salt/firefox kansioon. Init.sls tiedostoon lisäsin kaksi uutta kohtaa. Jotka näkyvät kuvassa alla.
+
 <img width="367" alt="Näyttökuva 2024-5-3 kello 21 04 17" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/0aa7154d-d054-4d20-b92d-99bb8d8c1559">
 
 Seuraavaksi kävin muokkaamassa sshd_config tiedostoon kohdan Port {{port}}. Tehtävässä käytettiin apuna jinjaa joka vaihtaa sulkujen sisällä olevan port sanan numeroiksi 8888. 
 Kokeilin jälleen ajaa tilaa.
+
 <img width="714" alt="Näyttökuva 2024-5-3 kello 20 54 23" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/180255d4-8e62-4a99-b99f-cc25a6c6877b">
 
 Viimeiseksi tehtävässä oli tarkoitus avata portteja palomuurissa. Tämä olisi tapahtunut kopioimalla /etc/ufw/user.rules mutta en löytänyt haluttua tiedostoa kansiosta. 
@@ -107,11 +133,11 @@ Moduli oli mielestäni hyvin toteutettu ja ohjeet olivat selkeät noudattaa. Vai
 
 ## d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. Kunkin idean kuvaukseen riittää yksi virke. Ensi kerralla katsomme yhdessä aiheen valintaa ja sopivia vinkkejä. Tarvitsen pohjaksi omia ideoitasi, jotta voin antaa hyödyllisiä ja juuri sinulle sopivia neuvoja.
 
-1- 
-2-
-3-
-4-
-5-
+1- Salt tila joka asentaa apache2 uudelle koneelle valmiiksi confattuna.
+2- Salt tila joka lataa suosikki paketteja uudelle koneelle.
+3- Salt tila jolla ladata paketteja jotka tarvitsevat repon.
+4- Alkuasetukset uudelle Linux-koneelle
+5- Alkuasetukset uudelle Windows koneelle
 
 ## Lähteet
 
