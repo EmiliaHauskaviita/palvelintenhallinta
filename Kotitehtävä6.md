@@ -138,10 +138,14 @@ Moduli oli mielestäni hyvin toteutettu ja ohjeet olivat selkeät noudattaa. Vai
 ## d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. Kunkin idean kuvaukseen riittää yksi virke. Ensi kerralla katsomme yhdessä aiheen valintaa ja sopivia vinkkejä. Tarvitsen pohjaksi omia ideoitasi, jotta voin antaa hyödyllisiä ja juuri sinulle sopivia neuvoja.
 
 1- Salt tila joka asentaa apache2 uudelle koneelle valmiiksi confattuna.
+
 2- Salt tila joka lataa suosikki paketteja uudelle koneelle.
+
 3- Salt tila jolla ladata paketteja jotka tarvitsevat repon.
+
 4- Alkuasetukset uudelle Linux-koneelle
-5- Alkuasetukset uudelle Windows koneelle
+
+5- Alkuasetukset uudelle Windows tai Mac koneelle
 
 ## Lähteet
 
