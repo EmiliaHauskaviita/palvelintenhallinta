@@ -6,15 +6,14 @@ Lisenssi: GNU General Public License.
 
 Koneena minulla toimii MacBook Air, jossa on prosessorina Intel Core i3.
 
-Luodaan Saltin avulla tila, joka lataa kuvanmuokkaukseen käytettäviä paketteja graafiselle suunnittelijalle. 
+Luodaan Saltin avulla tila, joka lataa kuvanmuokkaukseen käytettäviä paketteja valokuvaajalle ja oman nettisivun tälle. 
 
 
 ### Tietoa tehtävään liittyen
 
-Tero karvisen Palvelinten hallinta kurssi kevät 2024 alkaa olemaan loppu suoralla. Viimeisenä tehtävänä oli tehdä oma moduli. Modulin tarkoituksena oli ratkaista joku "oikea" ongelma. 
-Minun modulin tarkoitus oli käyttää yhtä master konetta ja kahta sen orja konetta joille lataan erilaisia paketteja. Toiselle orja koneelle lataan paketteja, joita graafinen suunnittelija tarvitsee kuvanmuokkaukseen uudelle koneelleen ottaessaan sen käyttöön.
-Toiselle koneelle taas lataan yleisiä paketteja, joita käyttäjä tarvitsee koneellaan ottaessaan sen käyttöö. Kuten UFW, micro, tree  ja ssh.
-Olen modulia tehdessä käyttänyt Tero Karvisen tekemiä eri ohjeita. Hyödynsin modulin teossa myös aikaisemmin tekemiäni harjoituksia, jotka löytyvät GitHubista. 
+Tero karvisen Palvelinten hallinta kurssi kevät 2024 alkaa olemaan loppu suoralla. Viimeisenä tehtävänä oli tehdä oma moduli. Modulin tarkoituksena oli ratkaista, joku "oikea" ongelma. Minun modulin ajatuksena on luoda Saltilla tila, jolla saan asennettua erilaisia paketteja. Käytän modulin luomiseen herra-orja arkkitehtuuria. Asennan paketit ensin käsin herra koneelle ja sitten saltin avulla orja koneille. Ensimmäiselle orja konellee haluan ladata erilaisia kuvanmuokkaukseen soveltuvia ohjelmia, kuten GIMP, 7Zip, Inkscape. Asennan myös Apachen, jonka avulla luon valokuvaajalle kotisivun. Apachen lisäksi asennan PHP:n, jota käytetään verkkosivujen luomiseen. 
+
+Toiselle orja koneelle lataan yleisiä paketteja, joita haluan että omalta koneeltani löytyy, kun otan sen käyttöön ensimmäistä kertaa. Kyseisiä paketteja ovat, curl, micro, tree, git, openssh-server ja cowsay. Kyseiset paketit lataan myös toiselle orjalle sillä hyödynnän niitä. Näiden pakettien lisäksi lataan molemmille orjille UFW ja muokkaan palomuuriasetuksia, laittamalla portit 22, 80, 4505 ja 4506 auki. Olen modulia tehdessä käyttänyt Tero Karvisen tekemiä eri ohjeita sekä verkosta löytämiäni ohjeita. Hyödynsin modulin teossa myös aikaisemmin tekemiäni harjoituksia, jotka löytyvät GitHubista. 
 
 Harjoituksessa käytin VirtualBoxia, johon latasin Vagrantin avulla kolme virtuaalikoentta, joihin määritin herra-orja arkkitehtuurin. Tero karvisen sivuilla oli valmiiksi tehty Vagrantfile, 
 jossa määritettiin orjat ja herra (https://terokarvinen.com/2023/salt-vagrant/?fromSearch=one%20master%20two%20slaves). Lataan ensin käsin paketit master koneelle ja saltin avulla minion koneille.
@@ -24,11 +23,25 @@ jossa määritettiin orjat ja herra (https://terokarvinen.com/2023/salt-vagrant/
 
 GIMP
 
+Inkscape
+
+Apache2
+
+PHP
+
+UFW
+
 Git
 
 Curl
 
-Näiden pakettien lisäksi latasin myös apache2 ja PHP, jolla loin kotisivun käyttäjälle. 
+Micro
+
+Tree
+
+Cowsay
+
+Openssh-server 
 
 ### Salt Master ja Salt Minion
 
@@ -57,7 +70,7 @@ Herra ja orja koneiden tilat onnistuivat.
 
 ### Pakettien lataus
 
-Onnistuneen Hello tilan ajamisen jälkeen aloitin perus pakettien asentamisen, joista osaa tulen tarvitsemaan modulin tekemisessä. Loin tähän suoraan apps tilan, jolla sain asennettua halutut paketit. Kyseiset paketit ovat git, curl, micro, tree, cowsay, ufw ja openssh-server. Ajoin Salt tilan ensin tmaster koneelle ja sen jälkeen t001 ja t002 koneille eli orja koneille. 
+Onnistuneen Hello tilan ajamisen jälkeen aloitin perus pakettien asentamisen, joista osaa tulen tarvitsemaan modulin tekemisessä. Loin tähän suoraan apps tilan, jolla sain asennettua halutut paketit. Kyseiset paketit ovat git, curl, micro, tree, cowsay ja openssh-server. Ajoin Salt tilan ensin tmaster koneelle ja sen jälkeen t001 ja t002 koneille eli orja koneille. 
 
 <img width="800" alt="Näyttökuva 2024-5-9 kello 15 59 33" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/634da276-4849-446e-8ef5-854420c99d97">
 
@@ -68,6 +81,8 @@ Onnistuneen Hello tilan ajamisen jälkeen aloitin perus pakettien asentamisen, j
 <img width="399" alt="Näyttökuva 2024-5-9 kello 16 01 29" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/a6bf15f0-9817-49ab-8006-0143de845ea7">
 
 Kuvissa näkyy, että asennus Saltilla onnistui tmaster koneelle ja molemmille orja koneille t001 ja t002. 
+
+### Git
 
 
 ### Apache2 asennus ja kotisivujen teko
@@ -130,9 +145,13 @@ Seuraavaksi vielä ajoin tilan orjalle.
 
 ### Palomuuri asetukset
 
-Tutkin seuraavaksi palomuuriasetuksia ja niiden päälle laittamista. Apuna tässä käytin Tero Karvisen ohjeita (https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=ufw). 
+Tutkin seuraavaksi palomuuriasetuksia ja niiden päälle laittamista. Apuna tässä käytin Tero Karvisen ohjeita (https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=ufw). Aloitin laittamalla palomuurin päälle komennolla 'sudo enable ufw', jonka jälkeen avasin portteja komennolla 'sudo allow ufw 22/tcp'. Porttien avaamisen jälkeen tarkistin, että ne on auki komennolla 'sudo ufw status'. 
 
-### Pakettien testaaminen
+Kuva: Portit auki
+
+Nyt kun olen tarkistanut että halutut portit ovat auki siirryin saltin kimppuun. Aloitin tekemällä uuden kansion 'ufw' kansioon '/srv/salt'. Minun täytyi tuoda 'ufw' kansion sisään tiedostot jotka olivat muokkaantuneet portteja avattaessa. Nämä tiedostot löysin käyttämällä komentoa 'sudo find /etc/ -printf "T%+ %p\n" |sort|tail -10'. 
+
+### Kuvanmuokkaus paketit 
 
 
 ## Lähteet
