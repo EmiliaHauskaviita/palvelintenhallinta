@@ -2,11 +2,11 @@
 
 Emilia Hauskaviita
 
-Lisenssi: GNU General Public License. 
+Lisenssi: GNU General Public License v3.0. 
 
 Koneena minulla toimii MacBook Air, jossa on prosessorina Intel Core i3.
 
-Luodaan Saltin avulla tila, joka lataa kuvanmuokkaukseen käytettäviä paketteja valokuvaajalle ja oman nettisivun tälle. 
+Luodaan Saltin avulla tila, joka asentaa kuvanmuokkaukseen käytettäviä paketteja valokuvaajalle ja oman nettisivun tälle. 
 
 
 ### Tietoa tehtävään liittyen
