@@ -54,7 +54,7 @@ testasin koneiden yhteyttä.
 
 <img width="328" alt="Näyttökuva 2024-5-7 kello 11 16 45" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/6d82b1ba-eb5e-42db-a242-ca54311cb569">
 
-Koska koneiden välinen yhteys oli kunnossa pääsin aloittaamaan seuraavan vaiheen, joka oli Hello tilan luominen. Tällä varmistan vielä että kaikki toimii herra ja orja koneiden välillä.
+Koska koneiden välinen yhteys oli kunnossa pääsin aloittaamaan seuraavan vaiheen, joka oli Hello tilan luominen. Tällä varmistan vielä, että kaikki toimii herra ja orja koneiden välillä.
 
 
 ### Hello tila
@@ -83,6 +83,11 @@ Onnistuneen Hello tilan ajamisen jälkeen aloitin perus pakettien asentamisen, j
 Kuvissa näkyy, että asennus Saltilla onnistui tmaster koneelle ja molemmille orja koneille t001 ja t002. 
 
 ### Git
+
+Kokeilin Git toimivuutta ja cloonasin GitHubin palvelintenhallinta varaston 'tmaster koneelle'. Jotta voin cloonata haluamani varaston koneelle täytyy minun ensin hankkia koneen julkinen avain, jonka vien GitHubiin. Avaimen sain antamalla komennon 'ssh-keygen'. Kopioin julkisen avaimen 'id_rsa.pub' ja vein sen GitHubiin. Tämän jälkeen kopioin GitHubista ssh url:in. Antamalla komennon 'git clone (url)' sain cloonattua palvelintenhallinta varaston.
+
+<img width="644" alt="Näyttökuva 2024-5-12 kello 19 24 43" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/330fa655-f108-43ac-9a8b-964324ee3233">
+
 
 
 ### Apache2 asennus ja kotisivujen teko
@@ -115,7 +120,7 @@ Apache2 asennus ja toimivuus on nyt tarkistettu, joten pääsen seuraavaan vaihe
 
 ### PHP asennus
 
-Nimesin 'index.html' tiedoston uudelleen komennolla 'mv index.html index.php'. Lisäsin seuraavaksi 'index.php' tiedostoon PHP koodin pätkän ja tarkistin 'curl localhost' ettei PHP toimi vielä. 
+Nimesin 'index.html' tiedoston uudelleen komennolla 'mv index.html index.php'. Lisäsin seuraavaksi 'index.php' tiedostoon PHP koodin pätkän ja tarkistin 'curl localhost' komennolla, ettei PHP toimi vielä. 
 
 <img width="363" alt="Näyttökuva 2024-5-9 kello 18 10 51" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/734aa4f2-112c-4ea7-8090-b26545a646b1">
 
@@ -147,16 +152,45 @@ Seuraavaksi vielä ajoin tilan orjalle.
 
 Tutkin seuraavaksi palomuuriasetuksia ja niiden päälle laittamista. Apuna tässä käytin Tero Karvisen ohjeita (https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=ufw). Aloitin laittamalla palomuurin päälle komennolla 'sudo enable ufw', jonka jälkeen avasin portteja komennolla 'sudo allow ufw 22/tcp'. Porttien avaamisen jälkeen tarkistin, että ne on auki komennolla 'sudo ufw status'. 
 
-Kuva: Portit auki
+<img width="401" alt="Näyttökuva 2024-5-12 kello 14 16 26" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/4a2b25f7-fc63-478d-a936-ad32a6a92302">
 
-Nyt kun olen tarkistanut että halutut portit ovat auki siirryin saltin kimppuun. Aloitin tekemällä uuden kansion 'ufw' kansioon '/srv/salt'. Minun täytyi tuoda 'ufw' kansion sisään tiedostot jotka olivat muokkaantuneet portteja avattaessa. Nämä tiedostot löysin käyttämällä komentoa 'sudo find /etc/ -printf "T%+ %p\n" |sort|tail -10'. 
+
+Nyt kun olen tarkistanut että halutut portit ovat auki siirryin saltin kimppuun. Aloitin tekemällä uuden kansion 'ufw' kansioon '/srv/salt'. Minun täytyi tuoda 'ufw' kansion sisään tiedostot jotka olivat muokkaantuneet portteja avattaessa. Nämä tiedostot löysin käyttämällä komentoa 'sudo find /etc/ -printf "T%+ %p\n" |sort|tail -10'. Kopioin ensin tiedostot 'user.conf', 'user.rules' ja 'user6.rules' kansioon '/srv/salt/ufw'. Tämän jälkeen tein init.sls tiedoston kansion sisään. Kun yritin ajaa tilaa Saltilla, se ei kuitenkaan toiminut ja aloin selvittämään, mistä tämä voisi johtua ja huomasin että kopioimani tiedostot vaativat sudo oikeuksia, joten minun täytyi kopioida tiedostojen 'uder.rules' ja 'user6.rules' sisältö uusiin tiedostoihin, joihin ei tarvita sudo oikeuksia. Uusien tiedostojen nimeksi laitoin 'user.rulesn' ja 'user6.rulesn'.
+
+<img width="346" alt="Näyttökuva 2024-5-12 kello 14 15 33" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/ec1b5bf3-b3e0-4e58-82e4-897e9f8dce05">
+
+Luotuani uudet tiedostot ja vaihdettuani 'init.sls' tiedostoon uudet nimet tiedostoille Salt tilan ajaminen onnistui molemmille orja koneille.
+
+<img width="521" alt="Näyttökuva 2024-5-9 kello 20 05 33" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/1a524d79-dc18-41cd-8463-4eaecf066b09">
+
+
 
 ### Kuvanmuokkaus paketit 
+Aloitin 7zip paketin asentamisesta ensin käsin 'tmaster' koneelle. Käytin komentoa 'sudo apt-get install p7zip-full'. Seuraavaksi asensin käsin GIMP paketin 'sudo apt-get install gimp'. Viimeisenä asensin vielä Inkscape paketin 'sudo apt-get install inkscape'. Kun kaikki paketit oli asennettu menin kansioon '/srv/salt' ja loin uuden kansion 'photo', jonka sisään tein init.sls tiedoston. 
+
+<img width="350" alt="Näyttökuva 2024-5-12 kello 14 42 13" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/f998db16-406f-4bc4-b7ca-5333cce8bbaa">
+
+Ajoin photo tilan seuraavaksi 'tmaster' koneelle 'sudo salt-call --local state.apply photo'. Koska olin asentanut paketit jo käsin tuli vastaus nopeasti. 
+
+<img width="500" alt="Näyttökuva 2024-5-12 kello 14 43 07" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/91653f69-61ce-477f-b9da-485d1192ff02">
+
+Seuraavaksi ajoin Salt tilan orjalle 't001' komennolla 'sudo salt 't001' state-apply photo'. Minun olisi kannattanut tähän laittaa vielä lisäksi '-l debug', sillä tilan ajamisessa meni melko kauan ja minulle ei tullut mitään ilmoitusta odotus aikana. Tilan ajaminen orjalle kuitenkin onnistui.
+
+<img width="261" alt="Näyttökuva 2024-5-12 kello 14 49 21" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/c618c5b3-f0a5-479b-9e07-4d9e8bc99c49">
 
 
 ## Lähteet
 https://terokarvinen.com/2024/configuration-management-2024-spring/
+
 https://ubuntu.com/server/docs/how-to-install-and-configure-php
+
 https://www.w3schools.com/php/
+
 https://github.com/rrich360/Apache2.4-PHP7-MySQL-phpMyAdmin-manual-configuration
+
+https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=ufw
+
+https://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example/
+
+https://operavps.com/docs/install-7zip-in-linux/#:~:text=Install%207Zip%20in%20Linux%20Using%20Command%20Line,-First%2C%20let's%20see&text=So%2C%20you%20need%20to%20open,7zip%20package%20on%20your%20system.&text=P7zip%20and%20p7zip%2Dplugins%20are,Red%20Hat%2Dbased%20Linux%20distributions.
 
