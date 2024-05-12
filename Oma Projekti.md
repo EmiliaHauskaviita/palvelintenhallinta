@@ -149,6 +149,10 @@ Seuraavaksi vielä ajoin tilan orjalle.
 
 <img width="237" alt="Näyttökuva 2024-5-9 kello 19 12 01" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/cc826a0e-054a-4408-b784-307b61214b32">
 
+Tarkistin vielä verkossa, että kotisivu näkyi oikein. 
+
+<img width="459" alt="Näyttökuva 2024-5-12 kello 20 35 03" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/68f8f5b7-9e8c-4465-9b82-5dbb47813f3c">
+
 
 ### Palomuuri asetukset
 
