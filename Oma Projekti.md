@@ -2,6 +2,8 @@
 
 Emilia Hauskaviita
 
+12.05.2024
+
 Lisenssi: GNU General Public License v3.0. 
 
 Koneena minulla toimii MacBook Air, jossa on prosessorina Intel Core i3.
@@ -92,7 +94,7 @@ Kokeilin Git toimivuutta ja cloonasin GitHubin palvelintenhallinta varaston 'tma
 
 ### Apache2 asennus ja kotisivujen teko
 
-Asennetaan apache2 ensin käsin komennolla ' sudo apt-get install apache2'. katsoin aikaisemmassa kohdassa asennetun curl avulla, miltä localhost näyttää. 
+Asennetaan apache2 ensin käsin komennolla ' sudo apt-get install apache2'. Katsoin aikaisemmassa kohdassa asennetun curl avulla, miltä localhost näyttää. 
 
 <img width="772" alt="Näyttökuva 2024-5-9 kello 16 21 31" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/3759df99-90e6-41a7-9439-1e566f7aab80">
 
