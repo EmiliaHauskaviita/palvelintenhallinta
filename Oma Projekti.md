@@ -47,7 +47,7 @@ Openssh-server
 
 ### Salt Master ja Salt Minion
 
-Aloitin tekemällä omalle koneelleni uuden kansion, johon tein Vagrantfile tiedoston, jonka sisällön kopioin Tero Karvisen ohjeista. Tällä tiedostolla loin Kolem uutta konetta, joille 
+Aloitin tekemällä omalle koneelleni uuden kansion, johon tein Vagrantfile tiedoston, jonka sisällön kopioin Tero Karvisen ohjeista(https://terokarvinen.com/2023/salt-vagrant/?fromSearch=master%20and%20two%20slaves). Tällä tiedostolla loin Kolem uutta konetta, joille 
 oli annettu ip-osoitteet ja ladattu salt-minion ja salt-master. Tiedostossa on myös valmiiksi määritetty minion koneille masterin ip-osoite. Käynnistin koneet ensin komennolla 'vagrant up' 
 ja otin yhteyden master koneeseen komennolla 'vagrant ssh tmaster'. Master koneelle päästyäni hyväksyin orja koneiden lähettämät avaimet komennolla 'sudo salt-key -A', jonka jälkeen
 testasin koneiden yhteyttä. 
@@ -201,6 +201,8 @@ W3Schools, Easy Learning with "PHP Tryit": https://www.w3schools.com/php/
 rrich360 Apache2.4-PHP7-MySQL-and-phpMyAdmin-Configuration, 2019: https://github.com/rrich360/Apache2.4-PHP7-MySQL-phpMyAdmin-manual-configuration
 
 Karvinen, T. Instant Firewall – sudo ufw enable, 2016: https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=ufw
+
+Karvinen, T. Salt Vagrant - automatically provision one master and two slaves, 2023: https://terokarvinen.com/2023/salt-vagrant/?fromSearch=master%20and%20two%20slaves
 
 Karvinen, T. Apache User Homepages Automatically – Salt Package-File-Service Example, 2018: https://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example/
 
