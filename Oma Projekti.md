@@ -178,19 +178,29 @@ Seuraavaksi ajoin Salt tilan orjalle 't001' komennolla 'sudo salt 't001' state-a
 
 <img width="261" alt="Näyttökuva 2024-5-12 kello 14 49 21" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/c618c5b3-f0a5-479b-9e07-4d9e8bc99c49">
 
+### Yhteenveto
+
+Lopuksi tein kansioon '/srv/salt uuden tiedoston 'tp.sls', johon laitoin kaikki luomani tilat, jotta saan ajettua tilat yhdellä komennolla 'sudo salt '*' state.highstate'. Molemmilla orjilla tilojen ajo onnistui.
+<img width="302" alt="Näyttökuva 2024-5-12 kello 19 44 45" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/cec4c96b-6b67-4c3d-946a-68de7219c2d7">
+
+<img width="338" alt="Näyttökuva 2024-5-12 kello 19 43 25" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/4a0734ad-0563-4bcd-ad44-6f4132c36a5b">
+
+<img width="245" alt="Näyttökuva 2024-5-12 kello 19 43 05" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/ddeac176-571b-4f1f-9c55-cf66b9655efd">
+
+Nyt 't001' koneella on erilaisia kuvanmuokkaus työkaluja, git versionhallintaa varten ja omat kotisivut. Myös 't002' koneelle on asennettu siihen halutut peruspaketit. Molempiin orjiin on myös päivitetty palomuuri asetuksia. 
 
 ## Lähteet
-https://terokarvinen.com/2024/configuration-management-2024-spring/
+Karvinen, T. Infra as Code - Palvelinten hallinta 2024: https://terokarvinen.com/2024/configuration-management-2024-spring/
 
-https://ubuntu.com/server/docs/how-to-install-and-configure-php
+Ubuntu, How to install and configure PHP, 2024: https://ubuntu.com/server/docs/how-to-install-and-configure-php
 
-https://www.w3schools.com/php/
+W3Schools, Easy Learning with "PHP Tryit": https://www.w3schools.com/php/
 
-https://github.com/rrich360/Apache2.4-PHP7-MySQL-phpMyAdmin-manual-configuration
+rrich360 Apache2.4-PHP7-MySQL-and-phpMyAdmin-Configuration, 2019: https://github.com/rrich360/Apache2.4-PHP7-MySQL-phpMyAdmin-manual-configuration
 
-https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=ufw
+Karvinen, T. Instant Firewall – sudo ufw enable, 2016: https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=ufw
 
-https://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example/
+Karvinen, T. Apache User Homepages Automatically – Salt Package-File-Service Example, 2018: https://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example/
 
-https://operavps.com/docs/install-7zip-in-linux/#:~:text=Install%207Zip%20in%20Linux%20Using%20Command%20Line,-First%2C%20let's%20see&text=So%2C%20you%20need%20to%20open,7zip%20package%20on%20your%20system.&text=P7zip%20and%20p7zip%2Dplugins%20are,Red%20Hat%2Dbased%20Linux%20distributions.
+Ashley, How can I Install 7Zip in Ubuntu, Debian, Centos & Fedora, OPERAVPS, 2023: https://operavps.com/docs/install-7zip-in-linux/#:~:text=Install%207Zip%20in%20Linux%20Using%20Command%20Line,-First%2C%20let's%20see&text=So%2C%20you%20need%20to%20open,7zip%20package%20on%20your%20system.&text=P7zip%20and%20p7zip%2Dplugins%20are,Red%20Hat%2Dbased%20Linux%20distributions.
 
