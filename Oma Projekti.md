@@ -187,6 +187,7 @@ Seuraavaksi ajoin Salt tilan orjalle 't001' komennolla 'sudo salt 't001' state-a
 ### Yhteenveto
 
 Lopuksi tein kansioon '/srv/salt uuden tiedoston 'tp.sls', johon laitoin kaikki luomani tilat, jotta saan ajettua tilat yhdellä komennolla 'sudo salt '*' state.highstate'. Molemmilla orjilla tilojen ajo onnistui.
+
 <img width="302" alt="Näyttökuva 2024-5-12 kello 19 44 45" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/cec4c96b-6b67-4c3d-946a-68de7219c2d7">
 
 <img width="338" alt="Näyttökuva 2024-5-12 kello 19 43 25" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/4a0734ad-0563-4bcd-ad44-6f4132c36a5b">
