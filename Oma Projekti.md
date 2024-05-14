@@ -10,6 +10,12 @@ Koneena minulla toimii MacBook Air, jossa on prosessorina Intel Core i3.
 
 Luodaan Saltin avulla tila, joka asentaa kuvanmuokkaukseen käytettäviä paketteja valokuvaajalle ja oman nettisivun tälle. 
 
+<img width="302" alt="Näyttökuva 2024-5-12 kello 19 44 45" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/9a873a2d-cd60-430b-af56-39cd56147477">
+
+<img width="338" alt="Näyttökuva 2024-5-12 kello 19 43 25" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/45559061-ee4d-431a-8b3f-813dd92e6f6d">
+
+<img width="245" alt="Näyttökuva 2024-5-12 kello 19 43 05" src="https://github.com/EmiliaHauskaviita/palvelintenhallinta/assets/165004928/3ddc3a98-8a94-491f-84c9-aa96222478f5">
+
 
 ### Tietoa tehtävään liittyen
 
